@@ -47,7 +47,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.spService.getProfiles()
+    this.spService.getPofilesCached()
       .subscribe(data => {
         this.getFields(data);
       });
@@ -108,7 +108,8 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
   }
 
   onInput() {
-    this.showUsers = true;
+
+    this.showUsers = this.selectedUser !== '';
 
     setTimeout(() => {
       const charToHighlightFirstName = document.querySelector('.user__info-name span.highlight');

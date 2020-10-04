@@ -1,19 +1,27 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {filter, map, tap} from 'rxjs/operators';
-import {Subject} from 'rxjs';
-
+import {filter, map, shareReplay, tap} from 'rxjs/operators';
+import {Observable, Subject} from 'rxjs';
+const CACHE_SIZE = 1;
 @Injectable({
   providedIn: 'root'
 })
 export class SharepointService {
   private profiles: any[] = [];
-
+  private cache$: Observable<any>;
   constructor(private http: HttpClient) {
   }
 
-  getProfiles() {
+  getPofilesCached() {
+    if (!this.cache$) {
+      this.cache$ = this.getProfiles().pipe(
+        shareReplay(CACHE_SIZE));
+    }
+    return this.cache$;
+  }
+
+  private getProfiles() {
     const appweburl = `_api/search/query`;
     // const properties = 'Office,Id,FirstName,LastName,MobilePhone,WorkPhone,AccountName,Department,JobTitle,PictureURL,WorkEmail,WorkId,EmployeeID'
     const properties = 'EmployeeID,FirstName,WorkEmail,PictureUrl,LastName,Cell';

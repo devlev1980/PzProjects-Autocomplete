@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PZProjects-SearchPage" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -141,8 +143,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.serve" />
         <item itemvalue="npm.bundle" />
+        <item itemvalue="npm.serve" />
         <item itemvalue="npm.bundle (1)" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.clean" />
@@ -166,7 +168,9 @@
       <workItem from="1599122245839" duration="1627000" />
       <workItem from="1599126100627" duration="9262000" />
       <workItem from="1599374514887" duration="1283000" />
-      <workItem from="1599570571981" duration="4190000" />
+      <workItem from="1599570571981" duration="4232000" />
+      <workItem from="1600180920970" duration="1359000" />
+      <workItem from="1601815719722" duration="1650000" />
     </task>
     <task id="LOCAL‎00001" summary="add project">
       <created>1598800237065</created>
@@ -198,7 +202,13 @@
       <option name="presentableId" value="LOCAL‎00005" />
       <updated>1599573630025</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎00006" summary="fix placeholder css">
+      <created>1599574805594</created>
+      <option name="number" value="LOCAL‎00006" />
+      <option name="presentableId" value="LOCAL‎00006" />
+      <updated>1599574805594</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +220,8 @@
     <MESSAGE value="fixing css" />
     <MESSAGE value="adding FullName property&#10;add search by Full Name" />
     <MESSAGE value="fixing search pipe" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing search pipe" />
+    <MESSAGE value="fix placeholder css" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix placeholder css" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="417" key="#TSLint" timestamp="1598863725434">
@@ -221,38 +232,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="308" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599126160606" />
-    <state x="569" y="81" key="CommitChangelistDialog2" timestamp="1599573627439">
+    <state x="569" y="81" key="CommitChangelistDialog2" timestamp="1599574804551">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599573627439" />
-    <state x="679" y="264" key="FileChooserDialogImpl" timestamp="1599037754833">
+    <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599574804551" />
+    <state x="679" y="264" key="FileChooserDialogImpl" timestamp="1600181138871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="679" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599037754833" />
-    <state width="1882" height="258" key="GridCell.Tab.0.bottom" timestamp="1599574578259">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="679" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600181138871" />
+    <state width="1259" height="154" key="GridCell.Tab.0.bottom" timestamp="1601817082946">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1882" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1882" height="258" key="GridCell.Tab.0.center" timestamp="1599574578259">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1259" height="154" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601817082946" />
+    <state width="1882" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600253818111" />
+    <state width="1259" height="154" key="GridCell.Tab.0.center" timestamp="1601817082945">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1882" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1882" height="258" key="GridCell.Tab.0.left" timestamp="1599574578259">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1259" height="154" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601817082945" />
+    <state width="1882" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600253818110" />
+    <state width="1259" height="154" key="GridCell.Tab.0.left" timestamp="1601817082945">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1882" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1882" height="258" key="GridCell.Tab.0.right" timestamp="1599574578259">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1259" height="154" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601817082945" />
+    <state width="1882" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600253818110" />
+    <state width="1259" height="154" key="GridCell.Tab.0.right" timestamp="1601817082946">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1882" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
+    <state width="1259" height="154" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601817082946" />
+    <state width="1882" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600253818110" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1599375211755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599375211755" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1599573634777">
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1599574809343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599573634777" />
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599574809343" />
     <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1598800172781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -261,9 +276,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="854" y="436" width="348" height="298" key="org.angular.cli.generate/0.0.1920.1040@0.0.1920.1040" timestamp="1598775720389" />
-    <state x="614" y="164" width="672" height="676" key="search.everywhere.popup" timestamp="1598794612723">
+    <state x="614" y="164" width="672" height="676" key="search.everywhere.popup" timestamp="1600181300539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="614" y="164" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598794612723" />
+    <state x="614" y="164" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600181300539" />
   </component>
 </project>
