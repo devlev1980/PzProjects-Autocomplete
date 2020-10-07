@@ -7,14 +7,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {FormsModule} from '@angular/forms';
-import { SearchPipe } from './pipes/search.pipe';
-import {TypeaheadModule} from 'ngx-bootstrap/typeahead';
+import { Search_byPipe } from './pipes/search_by.pipe';
 import { HighlightPipe } from './pipes/highlight.pipe';
 
 @NgModule({
   declarations: [
     AutocompleteSpfxWebPartComponent,
-    SearchPipe,
+    Search_byPipe,
     HighlightPipe
   ],
   imports: [
@@ -23,7 +22,7 @@ import { HighlightPipe } from './pipes/highlight.pipe';
     BrowserAnimationsModule,
     ScrollingModule,
     FormsModule,
-    TypeaheadModule,
+
 
   ],
   providers: [],

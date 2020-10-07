@@ -24,7 +24,7 @@ export class SharepointService {
   private getProfiles() {
     const appweburl = `_api/search/query`;
     // const properties = 'Office,Id,FirstName,LastName,MobilePhone,WorkPhone,AccountName,Department,JobTitle,PictureURL,WorkEmail,WorkId,EmployeeID'
-    const properties = 'EmployeeID,FirstName,WorkEmail,PictureUrl,LastName,Cell';
+    const properties = 'EmployeeID,FirstName,WorkEmail,PictureUrl,LastName,MobilePhone,WorkPhone';
     const httpURL = `${environment.apiUrl}${appweburl}`;
     const httpParams = new HttpParams()
       .set('queryText', `'*'`)

@@ -1,12 +1,17 @@
+
+
 <div class="container" #autocomplete>
+
   <div class="searchbar_container">
     <input type="text" class="autocomplete" placeholder="FIND PEOPLE..."  (input)="onInput()" [(ngModel)]="selectedUser">
-    <img src="{{searchIcon}}" alt="" class="search_icon">
+
+      <img src="{{searchIcon}}" alt="" class="search_icon">
+
   </div>
   <div >
     <cdk-virtual-scroll-viewport class="users" [itemSize]="1" *ngIf="showUsers">
       <ul>
-        <li *cdkVirtualFor="let profile of profiles | search:selectedUser " class="example-item" (click)="onSelectUser(profile)">
+        <li *cdkVirtualFor="let profile of profiles | search_by: selectedUser " class="example-item" (click)="onSelectUser(profile)">
           <div class="user_info__wrapper">
             <div class="img__wrapper">
               <img [src]="profile.PictureUrl" alt="profile picture" *ngIf="profile.PictureUrl;else noPicture">
@@ -20,7 +25,8 @@
             <div class="user__info">
               <span class="user__info-name"  [innerHTML]="profile?.FirstName | highlight: selectedUser"></span>
               <span class="user__info-lastname" [innerHTML]="profile?.LastName | highlight: selectedUser"></span>
-              <span class="user__info-email" [innerHTML]="profile?.WorkEmail"></span>
+              <a class="user__info-email" href="tel:{{profile.WorkPhone}}" [innerHTML]="profile?.WorkPhone"></a>
+              <a class="user__info-email" href="tel:{{profile.MobilePhone}}" [innerHTML]="profile?.MobilePhone"></a>
             </div>
           </div>
         </li>

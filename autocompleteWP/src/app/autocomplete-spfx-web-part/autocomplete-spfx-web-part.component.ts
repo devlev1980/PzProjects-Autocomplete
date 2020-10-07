@@ -14,7 +14,7 @@ import {Observable} from 'rxjs';
 import {FormGroup} from '@angular/forms';
 import {environment} from '../../environments/environment';
 import {IProfile} from '../models/profile.model';
-
+import { setTheme } from 'ngx-bootstrap/utils';
 @Component({
   selector: 'app-autocomplete-spfx-web-part',
   templateUrl: './autocomplete-spfx-web-part.component.html',
@@ -25,17 +25,19 @@ import {IProfile} from '../models/profile.model';
 export class AutocompleteSpfxWebPartComponent implements OnInit {
   @Input() description: string;
   profiles: IProfile[] = [];
-  profiles$: Observable<any>;
-  selectedEmployee: any;
+  // profiles$: Observable<any>;
+  selectedEmployee: IProfile;
   userProfiles: any;
   showUsers: boolean = false;
-  selectedUser: string;
+  selectedUser: string = '';
   inputForm: FormGroup;
   @ViewChild('username') userName: ElementRef;
   @ViewChild('autocomplete') autoComplete: ElementRef;
   searchIcon: string = environment.searchICon;
 
-
+  /*
+  * Close autocomplete on click outside
+  * */
   @HostListener('document:click', ['$event'])
   handleOutsideClick(event) {
     if (!this.autoComplete.nativeElement.contains(event.target)) {
@@ -43,29 +45,38 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
     }
   }
 
-  constructor(private spService: SharepointService, private renderer: Renderer2) {
+  constructor(private spService: SharepointService, private renderer: Renderer2,private cdr: ChangeDetectorRef) {
   }
-
+  /**
+   * get profiles from cache
+   */
   ngOnInit() {
+
     this.spService.getPofilesCached()
       .subscribe(data => {
         this.getFields(data);
+        this.cdr.detectChanges();
       });
 
 
   }
 
+  /**
+   * transform profiles values to keys
+   * add fullname property to profile
+   * remove duplicates from profiles
+   * sorting profiles by firstname
+   * @param profiles
+   */
   getFields(profiles) {
-    // TODO : get profiles filtered by employeeId
-    console.log('profiles', profiles)
-
     for (const profile of profiles) {
       const profileObject: IProfile = {
         EmployeeID: '',
         FirstName: '',
         LastName: '',
         PictureUrl: '',
-        Cell: '',
+        MobilePhone: '',
+        WorkPhone: '',
         WorkEmail: '',
         FullName: ''
       };
@@ -74,8 +85,9 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
           (j.Key === 'EmployeeID' && j.Value !== '' && j.Value !== null) ||
           (j.Key === 'FirstName' && j.Value !== '' ) ||
           (j.Key === 'WorkEmail' && j.Value !== null ||
-          (j.Key === 'Cell' && j.Value !== '' && j.Value !== null) ||
-          (j.Key === 'PictureUrl' && j.Value !== null) ||
+          (j.Key === 'MobilePhone' && j.Value !== '' && j.Value !== null) ||
+          (j.Key === 'WorkPhone' && j.Value !== '' && j.Value !== null) ||
+          (j.Key === 'PictureUrl' && j.Value !== null && j.value !== '') ||
           (j.Key === 'FullName' && j.Value !== '') ||
           (j.Key === 'LastName' && j.Value !== null))) {
           profileObject.FullName = ''
@@ -85,20 +97,22 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
       }
     }
 
-    this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
+     this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
     this.profiles = this.profiles.sort((a, b) => {
-      if (a.FirstName > b.FirstName) {
+      if (a.FullName > b.FullName) {
         return 1;
       } else {
         return -1;
       }
     });
-    console.log('filtered profiles', this.profiles)
-
     this.setFullName(this.profiles);
-
+    console.log('--',this.profiles);
   }
 
+  /**
+   * Set property FullName to profiles
+   * @param profiles
+   */
   setFullName(profiles) {
     this.profiles = profiles.map(profile => {
       profile.FullName = profile.FirstName + ' ' + profile.LastName;
@@ -107,29 +121,22 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
 
   }
 
+  /**
+   * Show/hide autocomplete on typing
+   * highlight character of FirstName,LastName or FullName on searching
+   */
   onInput() {
-
     this.showUsers = this.selectedUser !== '';
-
-    setTimeout(() => {
-      const charToHighlightFirstName = document.querySelector('.user__info-name span.highlight');
-      const charToHighlightLastName = document.querySelector('.user__info-lastname span.highlight');
-      if (charToHighlightFirstName) {
-        this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
-      }
-      if (charToHighlightLastName) {
-        this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
-      } else if (charToHighlightFirstName && charToHighlightLastName) {
-        this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
-        this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
-      }
-    }, 0);
   }
 
+  /**
+   * show user in Input after select specific user
+   * hide autocomplete
+   * @param user
+   */
   onSelectUser(user: IProfile) {
     this.selectedUser = user.FirstName + ' ' + user.LastName;
     this.showUsers = false;
-
     // TODO : redirect to Search page and pass this.selectedUser as parameter
   }
 }
