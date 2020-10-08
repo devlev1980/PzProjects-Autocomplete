@@ -46,16 +46,21 @@ a {
     input[type='text']::placeholder {
       color: $white;
     }
-
-    img.search_icon {
+    button{
       position: absolute;
       left: 15px;
-      top: 50%;
+      top: 25px;
       transform: translateY(-50%);
       z-index: 100;
       display: inline-block;
-      width: 30px;
-      height: 30px;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      cursor: pointer;
+      img.search_icon {
+        width: 30px;
+        height: 30px;
+      }
     }
 
     .autocomplete {
@@ -69,8 +74,8 @@ a {
       outline: 0;
       cursor: default;
       font-size: 18px;
+      position: relative;
     }
-
   }
 
   .cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
@@ -79,11 +84,9 @@ a {
   }
 
   .users {
-    position: absolute;
-    max-width: 366px;
-    width: 100%;
-    top: 129%;
-    right: 105px;
+    width: calc(100% - 116px);
+    top: 30px;
+    left: 16px;
     background: #102344;
     padding: 5px;
     height: 306px;
@@ -94,8 +97,7 @@ a {
       color: $textColor;
       padding: 0 15px;
       height: auto;
-
-
+      font-size: 18px;
     }
 
     .user_info__wrapper {
@@ -111,15 +113,12 @@ a {
         border-radius: 50%;
         margin-right: 10px;
 
-
         img {
           height: 100%;
           object-fit: cover;
           border-radius: 50%;
         }
       }
-
-
     }
 
     .user__info {
@@ -142,6 +141,12 @@ a {
       &-initials {
         font-size: 25px;
         color: $inputBg;
+      }
+      .form-group{
+        display: flex;
+        label{
+          margin-right: 5px;
+        }
       }
     }
   }

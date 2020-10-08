@@ -3,18 +3,18 @@ import {
   Component,
   ElementRef,
   HostListener,
-  Input,
+  Input, OnDestroy,
   OnInit,
   Renderer2,
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
 import {SharepointService} from '../services/sharepoint.service';
-import {Observable} from 'rxjs';
 import {FormGroup} from '@angular/forms';
 import {environment} from '../../environments/environment';
 import {IProfile} from '../models/profile.model';
-import { setTheme } from 'ngx-bootstrap/utils';
+import {SubSink} from 'subsink';
+
 @Component({
   selector: 'app-autocomplete-spfx-web-part',
   templateUrl: './autocomplete-spfx-web-part.component.html',
@@ -22,18 +22,17 @@ import { setTheme } from 'ngx-bootstrap/utils';
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AutocompleteSpfxWebPartComponent implements OnInit {
+export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
   @Input() description: string;
   profiles: IProfile[] = [];
-  // profiles$: Observable<any>;
   selectedEmployee: IProfile;
-  userProfiles: any;
   showUsers: boolean = false;
   selectedUser: string = '';
   inputForm: FormGroup;
   @ViewChild('username') userName: ElementRef;
   @ViewChild('autocomplete') autoComplete: ElementRef;
   searchIcon: string = environment.searchICon;
+  private sink = new SubSink();
 
   /*
   * Close autocomplete on click outside
@@ -45,18 +44,18 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
     }
   }
 
-  constructor(private spService: SharepointService, private renderer: Renderer2,private cdr: ChangeDetectorRef) {
+  constructor(private spService: SharepointService, private renderer: Renderer2, private cdr: ChangeDetectorRef) {
   }
+
   /**
    * get profiles from cache
    */
   ngOnInit() {
-
-    this.spService.getPofilesCached()
+    this.sink.add(this.spService.getPofilesCached()
       .subscribe(data => {
         this.getFields(data);
         this.cdr.detectChanges();
-      });
+      }))
 
 
   }
@@ -83,13 +82,13 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
       for (const j of profile) {
         if (
           (j.Key === 'EmployeeID' && j.Value !== '' && j.Value !== null) ||
-          (j.Key === 'FirstName' && j.Value !== '' ) ||
+          (j.Key === 'FirstName' && j.Value !== '') ||
           (j.Key === 'WorkEmail' && j.Value !== null ||
-          (j.Key === 'MobilePhone' && j.Value !== '' && j.Value !== null) ||
-          (j.Key === 'WorkPhone' && j.Value !== '' && j.Value !== null) ||
-          (j.Key === 'PictureUrl' && j.Value !== null && j.value !== '') ||
-          (j.Key === 'FullName' && j.Value !== '') ||
-          (j.Key === 'LastName' && j.Value !== null))) {
+            (j.Key === 'MobilePhone' && j.Value !== '' && j.Value !== null) ||
+            (j.Key === 'WorkPhone' && j.Value !== '' && j.Value !== null) ||
+            (j.Key === 'PictureUrl' && j.Value !== null && j.value !== '') ||
+            (j.Key === 'FullName' && j.Value !== '') ||
+            (j.Key === 'LastName' && j.Value !== null))) {
           profileObject.FullName = ''
           profileObject[j.Key] = j.Value;
           this.profiles.push(profileObject);
@@ -97,7 +96,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
       }
     }
 
-     this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
+    this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
     this.profiles = this.profiles.sort((a, b) => {
       if (a.FullName > b.FullName) {
         return 1;
@@ -106,7 +105,6 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
       }
     });
     this.setFullName(this.profiles);
-    console.log('--',this.profiles);
   }
 
   /**
@@ -139,6 +137,14 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
     this.showUsers = false;
     // TODO : redirect to Search page and pass this.selectedUser as parameter
   }
+
+  onIcon() {
+    window.location.href = environment.searchPageUrl;
+  }
+  ngOnDestroy() {
+    this.sink.unsubscribe();
+  }
+
 }
 
 
