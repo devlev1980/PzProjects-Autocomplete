@@ -21,9 +21,8 @@
     "@microsoft/sp-webpart-base": "~1.4.0",
     "@pnp/pnpjs": "^2.0.6",
     "@pnp/spfx-property-controls": "1.19.0",
-    "autocomplete-wp": "file:../autocompleteWP",
-    "terser-webpack-plugin-legacy": "1.2.3",
-    "webpack-merge": "4.2.1"
+    "autocomplete-wp": "file:../autocompleteWP"
+
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.4.1",

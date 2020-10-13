@@ -1,15 +1,10 @@
-
-
 <div class="container" #autocomplete>
-
   <div class="searchbar_container">
-    <input type="text" class="autocomplete" placeholder="FIND PEOPLE..."  (input)="onInput()" [(ngModel)]="selectedUser">
-
+    <input type="text" class="autocomplete" placeholder="FIND PEOPLE..."  (input)="onInput()" [(ngModel)]="selectedProfile">
     <button (click)="onIcon()"><img src="{{searchIcon}}" alt="" class="search_icon"></button>
-
-      <cdk-virtual-scroll-viewport class="users" [itemSize]="1" *ngIf="showUsers">
+      <cdk-virtual-scroll-viewport class="users" [itemSize]="5" *ngIf="isShowAutocomplete">
         <ul>
-          <li *cdkVirtualFor="let profile of profiles | search_by: selectedUser " class="example-item" (click)="onSelectUser(profile)">
+          <li *cdkVirtualFor="let profile of profiles | search_by: selectedProfile " class="example-item" (click)="onSelectUser(profile)">
             <div class="user_info__wrapper">
               <div class="img__wrapper">
                 <img [src]="profile.PictureUrl" alt="profile picture" *ngIf="profile.PictureUrl;else noPicture">
@@ -21,10 +16,10 @@
                 </ng-template>
               </div>
               <div class="user__info">
-                <span class="user__info-name"  [innerHTML]="profile?.FirstName | highlight: selectedUser"></span>
-                <span class="user__info-lastname" [innerHTML]="profile?.LastName | highlight: selectedUser"></span>
+                <span class="user__info-name"  [innerHTML]="profile?.FirstName | highlight: selectedProfile"></span>
+                <span class="user__info-lastname" [innerHTML]="profile?.LastName | highlight: selectedProfile"></span>
                 <div class="form-group" *ngIf="profile?.WorkPhone">
-                  <label for="work_phone">Office Ext: </label>
+                  <label for="work_phone">Ext: </label>
                   <a class="user__info-email" id="work_phone" href="tel:{{profile?.WorkPhone}}"
                      [innerHTML]="profile?.WorkPhone"></a>
                 </div>
@@ -37,11 +32,9 @@
             </div>
           </li>
         </ul>
-        <div class="footer">Search Directory for {{selectedUser}}</div>
+        <div class="footer">Search Directory for {{selectedProfile}}</div>
       </cdk-virtual-scroll-viewport>
-
   </div>
-
 </div>
 
 

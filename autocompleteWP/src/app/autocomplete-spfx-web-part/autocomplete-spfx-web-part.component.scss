@@ -5,7 +5,8 @@ $primaryBg: #102344;
 $borderColor: #1C3B61;
 $footerBg: #0b1b37;
 $textColor: #b0b0b0;
-
+$scrollbar-track: #cccccc;
+$scrollbar-thumb-hover: #555;
 
 // ==========  Basic reset ==================
 *, *::after, *:before {
@@ -69,8 +70,8 @@ a {
       border-radius: 35px;
       box-shadow: none;
       border: 0;
-      background: #72819b;
-      color: #fff;
+      background: $inputBg;
+      color: $white;
       outline: 0;
       cursor: default;
       font-size: 18px;
@@ -87,7 +88,7 @@ a {
     width: calc(100% - 116px);
     top: 30px;
     left: 16px;
-    background: #102344;
+    background: $primaryBg;
     padding: 5px;
     height: 306px;
     overflow-y: auto;
@@ -130,7 +131,7 @@ a {
         margin-right: 7px;
 
         b.highlight {
-          color: white;
+          color: $white;
         }
       }
 
@@ -156,9 +157,7 @@ a {
     padding: 10px;
     color: $white;
   }
-
 }
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -166,23 +165,19 @@ a {
 }
 
 /* Track */
-
 ::-webkit-scrollbar-track {
-  background: #cccccc;
+  background: $scrollbar-track;
 }
 
 /* Handle */
-
 ::-webkit-scrollbar-thumb {
   background: $inputBg;
   border-radius: 10px;
 }
 
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-
-  background: #555;
+  background: $scrollbar-thumb-hover;
 }
 
 

@@ -1,53 +1,77 @@
-# autocomplete-wp-spfx
+## external-sharing
 
-This project uses [Angular Elements](https://angular.io/guide/elements).
+## Summary
+This Development shows how to create Custom autocomplete using `Angular elements and @pnp/spfx` package.
 
-> This is where you include your project's documentation.
+## Solution
 
-## Global dependencies
+Solution|Author(s)
+--------|---------
+External-Sharing | PzProjects
 
-Requires Gulp globally installed:
+## Version history
 
-```shell
-npm install --global gulp
-```
+Version|Date|Comments
+-------|----|--------
+1.0|October 03, 2020|Initial version
 
-## Building the code
+## Technology versions used
+* Angular -
+Angular CLI: 7.0.7;
+Typescript                   2.4.2
+Webpack                      3.6.0
 
-Download & install all dependencies, build, bundle & package the project
+* Node.js- v10.22.0
+* Gulp-
+ CLI version: 2.3.0
+ Local version: 3.9.1
+* Npm- 6.14.8
 
-```shell
-# download & install dependencies
-npm install
+## Set your environment
 
-# transpile all TypeScript & SCSS => JavaScript & CSS
-gulp build
+Please follow this guide in order to set up your SharePoint Framework development environment:
+[SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment)
 
-# create component bundle & manifest
-gulp bundle
+## Preparations
 
-# create SharePoint package
-gulp package-solution
-```
+* Build you webpart with 'npm run bundle' command in Angular Project (autocompleteWP)
+* 
+-
 
-These commands produce the following:
+## Debug
 
-- **./lib**: intermediate-stage commonjs build artifacts
-- **./dist**: bundled script, along with other resources
-- **./temp/deploy**: all resources required by component(s) to deploy to a CDN (when `--ship` argument present)
+- First you need to set the url of the required document library:
+  Go to "serve.json" under the folder "config" and change "pageUrl" to the required document library url
+  This step is not mandatory when the relevant document library remain the same!
+- Move to folder where this readme exists
+- In the command line run:
+  - `npm install`
+  - `gulp trust-dev-cert`
+  - `gulp serve`
 
-## Build options
+## Deploy
 
-- `gulp clean`: Deletes all build output (**/dist**, **/lib**, **/temp**, etc.).
-- `gulp build`: Transpiles all TypeScript & SCSS to JavaScript & CSS, generates source map files & TypeScript type declaration files
-- `gulp bundle [--ship|-p|--production]`: Runs gulp task **build**, then uses webpack to create the JavaScript bundle(s) and component manifest(s) as defined in **./config/config.json**. The `--ship`, `-p` or `--production` argument specifies a production build that will generate minified bundles.
-- `gulp serve [--ship|-p|--production]`: Runs gulp tasks **build**, **bundle** & starts the local webserver. Depending on the project type, it opens the browser and navigates to the local workbench or specified URL (in the case of extension components). The `--ship`, `-p` or `--production` argument specifies a production build that modifies the resulting package for production hosting rather than local hosting of assets.
-- `gulp package-solution`: Creates the SharePoint Package (**.sppkg**) file.
-- `gulp dist`: Creates a production-ready SharePoint Package (**.sppkg**) file. The following gulp task gets executed in this specific order `gulp clean`, `gulp bundle`, `gulp package-solution.`
-- `gulp dev`: Creates a development-ready SharePoint Package (**.sppkg**) file. The following gulp task will be executed in this specific order `gulp clean`, `gulp bundle`, `gulp package-solution.`
+- Move to folder where this readme exists
+- In the command line run:
+  - `gulp serve --nobrowser`
+  - `gulp clean`
+  - `gulp bundle --ship`
+  - `gulp package-solution --ship`
+- Upload .sppkg file from sharepoint\solution to your tenant App Catalog
+  E.g.: https://<tenant>.sharepoint.com/sites/AppCatalog/AppCatalog
+- Only on the first upload: you need to approve Graph API request in the office365 admin center:
+  office365 admin >>> Advanced (right pannel) >>> Api access 
 
-> View all available gulp tasks by running `gulp --tasks`
+## Features
 
-More information on [SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
-
-Generated with [pnp/spfx](https://github.com/pnp/generator-spfx/).
+This project contains SharePoint Framework extensions that illustrates next features:
+* Command extension
+  [ListView Command Set](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api)
+* Custom dialog control using `@microsoft/sp-dialog` package
+* Using @pnp/sp
+* Using Microsoft Graph API
+  [Consume Microsoft Graph](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aad-tutorial)
+* React
+* Using `@fluentui/react` A collection of UX frameworks
+  Fluent UI React is the official open-source React front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products.
+  [fluentui](https://developer.microsoft.com/en-us/fluentui#/get-started)

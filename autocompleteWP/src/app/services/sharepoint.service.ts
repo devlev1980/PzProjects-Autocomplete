@@ -1,19 +1,22 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {filter, map, shareReplay, tap} from 'rxjs/operators';
-import {Observable, Subject} from 'rxjs';
+import {map, shareReplay} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {IProfile} from '../models/profile.model';
 const CACHE_SIZE = 1;
 @Injectable({
   providedIn: 'root'
 })
 export class SharepointService {
-  private profiles: any[] = [];
   private cache$: Observable<any>;
   constructor(private http: HttpClient) {
   }
 
-  getPofilesCached() {
+  /**
+   * Get profiles from cache
+   */
+  getProfilesCached():Observable<IProfile[]> {
     if (!this.cache$) {
       this.cache$ = this.getProfiles().pipe(
         shareReplay(CACHE_SIZE));
@@ -21,9 +24,12 @@ export class SharepointService {
     return this.cache$;
   }
 
-  private getProfiles() {
+  /**
+   * get profiles from sharepoint API
+   * @private
+   */
+  private getProfiles() : Observable<IProfile[]>{
     const appweburl = `_api/search/query`;
-    // const properties = 'Office,Id,FirstName,LastName,MobilePhone,WorkPhone,AccountName,Department,JobTitle,PictureURL,WorkEmail,WorkId,EmployeeID'
     const properties = 'EmployeeID,FirstName,WorkEmail,PictureUrl,LastName,MobilePhone,WorkPhone';
     const httpURL = `${environment.apiUrl}${appweburl}`;
     const httpParams = new HttpParams()
@@ -35,13 +41,6 @@ export class SharepointService {
       .pipe(
         map((res: any) => res.PrimaryQueryResult.RelevantResults.Table.Rows),
         map(item => item.map(el => el.Cells)),
-
-          // .pipe(
-          //   map((res: any) => res.PrimaryQueryResult.RelevantResults.Table.Rows),
-          //   catchError(this.handleError('getUsersByQuery', []))
-          // );
-
-        // map(results => this.getObjects(results))
       );
   }
 

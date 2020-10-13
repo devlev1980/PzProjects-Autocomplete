@@ -24,13 +24,11 @@ import {SubSink} from 'subsink';
 })
 export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
   @Input() description: string;
+  @ViewChild('autocomplete') autoComplete: ElementRef;
   profiles: IProfile[] = [];
   selectedEmployee: IProfile;
-  showUsers: boolean = false;
-  selectedUser: string = '';
-  inputForm: FormGroup;
-  @ViewChild('username') userName: ElementRef;
-  @ViewChild('autocomplete') autoComplete: ElementRef;
+  isShowAutocomplete: boolean = false;
+  selectedProfile: string = '';
   searchIcon: string = environment.searchICon;
   private sink = new SubSink();
 
@@ -40,31 +38,30 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
   @HostListener('document:click', ['$event'])
   handleOutsideClick(event) {
     if (!this.autoComplete.nativeElement.contains(event.target)) {
-      this.showUsers = false;
+      this.isShowAutocomplete = false;
     }
   }
 
-  constructor(private spService: SharepointService, private renderer: Renderer2, private cdr: ChangeDetectorRef) {
+  constructor(private spService: SharepointService,
+              private renderer: Renderer2,
+              private cdr: ChangeDetectorRef) {
   }
 
   /**
    * get profiles from cache
    */
   ngOnInit() {
-    this.sink.add(this.spService.getPofilesCached()
-      .subscribe(data => {
+    this.sink.add(this.spService.getProfilesCached()
+      .subscribe((data) => {
         this.getFields(data);
         this.cdr.detectChanges();
       }))
-
-
   }
 
   /**
    * transform profiles values to keys
    * add fullname property to profile
    * remove duplicates from profiles
-   * sorting profiles by firstname
    * @param profiles
    */
   getFields(profiles) {
@@ -79,39 +76,32 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
         WorkEmail: '',
         FullName: ''
       };
-      for (const j of profile) {
+      for (const profileElement of profile) {
         if (
-          (j.Key === 'EmployeeID' && j.Value !== '' && j.Value !== null) ||
-          (j.Key === 'FirstName' && j.Value !== '') ||
-          (j.Key === 'WorkEmail' && j.Value !== null ||
-            (j.Key === 'MobilePhone' && j.Value !== '' && j.Value !== null) ||
-            (j.Key === 'WorkPhone' && j.Value !== '' && j.Value !== null) ||
-            (j.Key === 'PictureUrl' && j.Value !== null && j.value !== '') ||
-            (j.Key === 'FullName' && j.Value !== '') ||
-            (j.Key === 'LastName' && j.Value !== null))) {
+          (profileElement.Key === 'EmployeeID' && profileElement.Value !== '' && profileElement.Value !== null) ||
+          (profileElement.Key === 'FirstName' && profileElement.Value !== '') ||
+          (profileElement.Key === 'WorkEmail' && profileElement.Value !== null ||
+            (profileElement.Key === 'MobilePhone' && profileElement.Value !== '' && profileElement.Value !== null) ||
+            (profileElement.Key === 'WorkPhone' && profileElement.Value !== '' && profileElement.Value !== null) ||
+            (profileElement.Key === 'PictureUrl' && profileElement.Value !== null && profileElement.value !== '') ||
+            (profileElement.Key === 'FullName' && profileElement.Value !== '') ||
+            (profileElement.Key === 'LastName' && profileElement.Value !== null))) {
           profileObject.FullName = ''
-          profileObject[j.Key] = j.Value;
+          profileObject[profileElement.Key] = profileElement.Value;
           this.profiles.push(profileObject);
         }
       }
     }
-
     this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
-    this.profiles = this.profiles.sort((a, b) => {
-      if (a.FullName > b.FullName) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
     this.setFullName(this.profiles);
+
   }
 
   /**
-   * Set property FullName to profiles
+   * Add property 'FullName' to profiles
    * @param profiles
    */
-  setFullName(profiles) {
+  setFullName(profiles:IProfile[]) {
     this.profiles = profiles.map(profile => {
       profile.FullName = profile.FirstName + ' ' + profile.LastName;
       return profile
@@ -121,25 +111,28 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
 
   /**
    * Show/hide autocomplete on typing
-   * highlight character of FirstName,LastName or FullName on searching
    */
-  onInput() {
-    this.showUsers = this.selectedUser !== '';
+  onInput():void {
+    this.isShowAutocomplete = this.selectedProfile !== '';
+    this.cdr.detectChanges();
   }
 
   /**
    * show user in Input after select specific user
    * hide autocomplete
-   * @param user
+   * @param profile
    */
-  onSelectUser(user: IProfile) {
-    this.selectedUser = user.FirstName + ' ' + user.LastName;
-    this.showUsers = false;
-    // TODO : redirect to Search page and pass this.selectedUser as parameter
+  onSelectUser(profile: IProfile):void {
+    this.selectedProfile = profile.FirstName + ' ' + profile.LastName;
+    this.isShowAutocomplete = false;
   }
 
+  /**
+   * click on search icon in input to navigate to the 'Search page'
+   * with 'selectedUser' parameter
+   */
   onIcon() {
-    window.location.href = environment.searchPageUrl;
+    window.location.href = environment.searchPageUrl+'/profile?='+ this.selectedProfile;
   }
   ngOnDestroy() {
     this.sink.unsubscribe();

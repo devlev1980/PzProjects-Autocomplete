@@ -11,11 +11,8 @@ export class Search_byPipe implements PipeTransform {
       return employees;
     }
     return employees.filter((user) => {
-      // return user.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase());
-
-      return  user.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase()) || user.LastName.toLowerCase().includes(searchTerm.toLowerCase()) || user.FullName.toLowerCase().includes(searchTerm.toLowerCase());
-
-    });
+      return user.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase()) || user.LastName.toLowerCase().includes(searchTerm.toLowerCase()) || user.FullName.toLowerCase().includes(searchTerm.toLowerCase());
+    }).sort((user1,user2)=> user1.FirstName.localeCompare(user2.FirstName)).reverse();
   }
-
 }
+
