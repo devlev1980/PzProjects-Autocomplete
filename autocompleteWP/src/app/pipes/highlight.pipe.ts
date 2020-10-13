@@ -4,8 +4,14 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'highlight'
 })
 export class HighlightPipe implements PipeTransform {
-  color: string = ''
-  transform(employee: string, searchTerm?: any): any {
+  color: string = '';
+
+  /**
+   * Highlight typed character in autocomplete
+   * @param employee
+   * @param searchTerm
+   */
+  transform(employee: string, searchTerm?: string): any {
     if (!employee || !searchTerm) {
       return employee;
     }

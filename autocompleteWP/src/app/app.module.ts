@@ -22,8 +22,6 @@ import { HighlightPipe } from './pipes/highlight.pipe';
     BrowserAnimationsModule,
     ScrollingModule,
     FormsModule,
-
-
   ],
   providers: [],
   entryComponents: [AutocompleteSpfxWebPartComponent]

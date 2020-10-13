@@ -10,7 +10,6 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {SharepointService} from '../services/sharepoint.service';
-import {FormGroup} from '@angular/forms';
 import {environment} from '../../environments/environment';
 import {IProfile} from '../models/profile.model';
 import {SubSink} from 'subsink';
@@ -94,7 +93,6 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
     }
     this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
     this.setFullName(this.profiles);
-
   }
 
   /**
@@ -106,7 +104,6 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
       profile.FullName = profile.FirstName + ' ' + profile.LastName;
       return profile
     });
-
   }
 
   /**

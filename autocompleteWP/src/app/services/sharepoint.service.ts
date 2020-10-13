@@ -39,10 +39,8 @@ export class SharepointService {
       .set('RowLimit', `'10000'`);
     return this.http.get(httpURL, {params: httpParams})
       .pipe(
-        map((res: any) => res.PrimaryQueryResult.RelevantResults.Table.Rows),
+        map((result: any) => result.PrimaryQueryResult.RelevantResults.Table.Rows),
         map(item => item.map(el => el.Cells)),
       );
   }
-
-
 }

@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/config/package-solution.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/config/package-solution.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/models/profile.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/models/profile.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/highlight.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/highlight.pipe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/assets/img/search_icon.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +184,7 @@
       <workItem from="1601982346128" duration="1223000" />
       <workItem from="1601988550596" duration="59646000" />
       <workItem from="1602497815704" duration="9240000" />
-      <workItem from="1602577734865" duration="1658000" />
+      <workItem from="1602577734865" duration="2335000" />
     </task>
     <task id="LOCAL‎00001" summary="add project">
       <created>1598800237065</created>
@@ -242,7 +240,13 @@
       <option name="presentableId" value="LOCAL‎00009" />
       <updated>1602162215810</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎00010" summary="cleaning and change README.md">
+      <created>1602579461510</created>
+      <option name="number" value="LOCAL‎00010" />
+      <option name="presentableId" value="LOCAL‎00010" />
+      <updated>1602579461510</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +262,8 @@
     <MESSAGE value="remove show autocomplete on click" />
     <MESSAGE value="fixes 07.10" />
     <MESSAGE value="add labels to cell phone &amp; work phone &#10;add Subsink" />
-    <option name="LAST_COMMIT_MESSAGE" value="add labels to cell phone &amp; work phone &#10;add Subsink" />
+    <MESSAGE value="cleaning and change README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning and change README.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="417" key="#TSLint" timestamp="1598863725434">
@@ -277,10 +282,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="372" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602073492061" />
-    <state x="379" y="0" key="CommitChangelistDialog2" timestamp="1602162214623">
+    <state x="379" y="0" key="CommitChangelistDialog2" timestamp="1602579459596">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="379" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602162214623" />
+    <state x="379" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602579459596" />
     <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599574804551" />
     <state x="453" y="164" key="FileChooserDialogImpl" timestamp="1602577697068">
       <screen x="0" y="0" width="1280" height="680" />
@@ -319,10 +324,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599375211755" />
-    <state x="367" y="147" key="Vcs.Push.Dialog.v2" timestamp="1602162220689">
+    <state x="367" y="147" key="Vcs.Push.Dialog.v2" timestamp="1602579515769">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="367" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602162220689" />
+    <state x="367" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602579515769" />
     <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599574809343" />
     <state x="507" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601988590455">
       <screen x="0" y="0" width="1280" height="680" />
