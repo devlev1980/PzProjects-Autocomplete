@@ -17,9 +17,14 @@ export class Search_byPipe implements PipeTransform {
     }
     return employees.filter((user) => {
       return user.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
-        user.LastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.FullName.toLowerCase().includes(searchTerm.toLowerCase());
-    }).sort((profile1, profile2) => profile1.FirstName.localeCompare(profile2.FirstName)).reverse();
-  }
-}
+        user.LastName.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
+        user.FullName.toLowerCase().startsWith(searchTerm.toLowerCase())
+    })
+      .sort((profile1, profile2) => profile1.FirstName.localeCompare(profile2.FirstName));
 
+    // return employees.filter((user) => {
+    //   return user.FullName.toLowerCase().startsWith(searchTerm.toLowerCase())
+    // }).sort((profile1, profile2) => profile1.FullName.localeCompare(profile2.FullName)).reverse();
+  }
+
+}

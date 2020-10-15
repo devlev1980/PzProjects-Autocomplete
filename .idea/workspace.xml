@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/autocompleteWP/src/assets/icons/clear-black-18dp.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/models/profile.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/models/profile.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/highlight.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/highlight.pipe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/assets/img/search_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="bugs_06.10" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Autocomplete_WP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/autocompleteWP/src/assets/icons" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -54,6 +54,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PZProject\Mobileye\searchbar2\autocompleteWP\src\assets\icons" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PZProject\searchbar2\autocompleteWP\src\assets\img" />
     </key>
@@ -153,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.bundle" />
         <item itemvalue="npm.serve" />
+        <item itemvalue="npm.bundle" />
         <item itemvalue="npm.clean" />
         <item itemvalue="npm.bundle (1)" />
         <item itemvalue="npm.build" />
@@ -184,7 +187,7 @@
       <workItem from="1601982346128" duration="1223000" />
       <workItem from="1601988550596" duration="59646000" />
       <workItem from="1602497815704" duration="9240000" />
-      <workItem from="1602577734865" duration="2335000" />
+      <workItem from="1602577734865" duration="28643000" />
     </task>
     <task id="LOCAL‎00001" summary="add project">
       <created>1598800237065</created>
@@ -246,7 +249,13 @@
       <option name="presentableId" value="LOCAL‎00010" />
       <updated>1602579461510</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎00011" summary="cleaning and add comments in pipes and interfaces&#10;remove img folder in assets">
+      <created>1602580154499</created>
+      <option name="number" value="LOCAL‎00011" />
+      <option name="presentableId" value="LOCAL‎00011" />
+      <updated>1602580154499</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +272,8 @@
     <MESSAGE value="fixes 07.10" />
     <MESSAGE value="add labels to cell phone &amp; work phone &#10;add Subsink" />
     <MESSAGE value="cleaning and change README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning and change README.md" />
+    <MESSAGE value="cleaning and add comments in pipes and interfaces&#10;remove img folder in assets" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning and add comments in pipes and interfaces&#10;remove img folder in assets" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="417" key="#TSLint" timestamp="1598863725434">
@@ -278,40 +288,44 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="396" y="210" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1280.680@0.0.1280.680" timestamp="1602577705126" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1602676990834">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602676990834" />
     <state x="372" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602073492061">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="372" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602073492061" />
-    <state x="379" y="0" key="CommitChangelistDialog2" timestamp="1602579459596">
+    <state x="379" y="0" key="CommitChangelistDialog2" timestamp="1602580153342">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="379" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602579459596" />
+    <state x="379" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602580153342" />
     <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1599574804551" />
     <state x="453" y="164" key="FileChooserDialogImpl" timestamp="1602577697068">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="453" y="164" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1602577697068" />
     <state x="679" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600181138871" />
-    <state width="1259" height="154" key="GridCell.Tab.0.bottom" timestamp="1602577707363">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1899" height="271" key="GridCell.Tab.0.bottom" timestamp="1602748276918">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1882" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600253818111" />
-    <state width="1259" height="154" key="GridCell.Tab.0.center" timestamp="1602577707363">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1899" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602748276918" />
+    <state width="1899" height="271" key="GridCell.Tab.0.center" timestamp="1602748276918">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1882" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600253818110" />
-    <state width="1259" height="154" key="GridCell.Tab.0.left" timestamp="1602577707363">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1899" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602748276918" />
+    <state width="1899" height="271" key="GridCell.Tab.0.left" timestamp="1602748276918">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1882" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600253818110" />
-    <state width="1259" height="154" key="GridCell.Tab.0.right" timestamp="1602577707363">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1899" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602748276918" />
+    <state width="1899" height="271" key="GridCell.Tab.0.right" timestamp="1602748276918">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1882" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600253818110" />
+    <state width="1899" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602748276918" />
     <state x="430" y="61" key="RollbackChangesDialog" timestamp="1602070380283">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -324,21 +338,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599375211755" />
-    <state x="367" y="147" key="Vcs.Push.Dialog.v2" timestamp="1602579515769">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1602663792359">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="367" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602579515769" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599574809343" />
+    <state x="367" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602580158420" />
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602663792359" />
     <state x="507" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601988590455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="507" y="270" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.680@0.0.1280.680" timestamp="1601988590455" />
     <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598800172781" />
-    <state x="569" y="285" width="348" height="298" key="org.angular.cli.generate" timestamp="1602068198053">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="854" y="436" width="348" height="298" key="org.angular.cli.generate" timestamp="1602676893752">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="569" y="285" width="348" height="298" key="org.angular.cli.generate/0.0.1280.680@0.0.1280.680" timestamp="1602068198053" />
-    <state x="854" y="436" width="348" height="298" key="org.angular.cli.generate/0.0.1920.1040@0.0.1920.1040" timestamp="1598775720389" />
+    <state x="854" y="436" width="348" height="298" key="org.angular.cli.generate/0.0.1920.1040@0.0.1920.1040" timestamp="1602676893752" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1602681722124">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602681722124" />
     <state x="614" y="164" width="672" height="676" key="search.everywhere.popup" timestamp="1600181300539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

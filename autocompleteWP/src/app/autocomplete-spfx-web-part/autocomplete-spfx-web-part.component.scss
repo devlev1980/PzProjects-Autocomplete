@@ -58,6 +58,17 @@ a {
       border: 0;
       box-shadow: none;
       cursor: pointer;
+      outline: none;
+      &.btn_clear{
+        position: absolute !important;
+        right: 0;
+        top: 10px;
+        transform: translateX(100px);
+        z-index: 1000;
+        width: 100%;
+        display: inline-block;
+        outline: none;
+      }
       img.search_icon {
         width: 30px;
         height: 30px;
@@ -86,10 +97,12 @@ a {
 
   .users {
     width: calc(100% - 116px);
-    top: 30px;
+    top: 28px;
     left: 16px;
     background: $primaryBg;
     padding: 5px;
+    //max-height: 306px;
+    //height: 100%;
     height: 306px;
     overflow-y: auto;
 
@@ -140,8 +153,16 @@ a {
       }
 
       &-initials {
-        font-size: 25px;
-        color: $inputBg;
+        border-radius: 50%;
+        display: flex;
+        width: 100%;
+        font-size: 16px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        color: #102344;
+        border: 3px solid #72819b;
+        background: #72819b;
       }
       .form-group{
         display: flex;

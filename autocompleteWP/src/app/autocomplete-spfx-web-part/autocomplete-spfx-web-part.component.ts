@@ -1,10 +1,11 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy, ChangeDetectorRef,
   Component,
   ElementRef,
   HostListener,
   Input, OnDestroy,
-  OnInit,
+  OnInit, QueryList,
   Renderer2,
   ViewChild,
   ViewEncapsulation
@@ -21,7 +22,7 @@ import {SubSink} from 'subsink';
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
+export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
   @Input() description: string;
   @ViewChild('autocomplete') autoComplete: ElementRef;
   profiles: IProfile[] = [];
@@ -93,13 +94,15 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
     }
     this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
     this.setFullName(this.profiles);
+    // this.profiles = this.profiles.sort((a,b)=> a.FullName.localeCompare(b.FullName))
+
   }
 
   /**
    * Add property 'FullName' to profiles
    * @param profiles
    */
-  setFullName(profiles:IProfile[]) {
+  setFullName(profiles: IProfile[]) {
     this.profiles = profiles.map(profile => {
       profile.FullName = profile.FirstName + ' ' + profile.LastName;
       return profile
@@ -109,9 +112,11 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
   /**
    * Show/hide autocomplete on typing
    */
-  onInput():void {
+  onInput(): void {
     this.isShowAutocomplete = this.selectedProfile !== '';
     this.cdr.detectChanges();
+
+
   }
 
   /**
@@ -119,7 +124,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
    * hide autocomplete
    * @param profile
    */
-  onSelectUser(profile: IProfile):void {
+  onSelectUser(profile: IProfile): void {
     this.selectedProfile = profile.FirstName + ' ' + profile.LastName;
     this.isShowAutocomplete = false;
   }
@@ -129,11 +134,19 @@ export class AutocompleteSpfxWebPartComponent implements OnInit,OnDestroy {
    * with 'selectedUser' parameter
    */
   onIcon() {
-    window.location.href = environment.searchPageUrl+'/profile?='+ this.selectedProfile;
+    window.location.href = environment.searchPageUrl + '/profile?=' + this.selectedProfile;
   }
+
   ngOnDestroy() {
     this.sink.unsubscribe();
   }
+
+  onClearInput() {
+    this.selectedProfile = '';
+    this.isShowAutocomplete = false;
+
+  }
+
 
 }
 

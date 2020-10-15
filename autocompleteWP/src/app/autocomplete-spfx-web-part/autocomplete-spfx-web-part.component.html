@@ -1,39 +1,49 @@
 <div class="container" #autocomplete>
   <div class="searchbar_container">
-    <input type="text" class="autocomplete" placeholder="FIND PEOPLE..."  (input)="onInput()" [(ngModel)]="selectedProfile">
+    <input type="text" class="autocomplete" placeholder="FIND PEOPLE..." #inputRef (input)="onInput()"
+           [(ngModel)]="selectedProfile">
+    <button (click)="onClearInput()" class="btn_clear" *ngIf="inputRef.value !== ''">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </svg>
+    </button>
     <button (click)="onIcon()"><img src="{{searchIcon}}" alt="" class="search_icon"></button>
-      <cdk-virtual-scroll-viewport class="users" [itemSize]="5" *ngIf="isShowAutocomplete">
-        <ul>
-          <li *cdkVirtualFor="let profile of profiles | search_by: selectedProfile " class="example-item" (click)="onSelectUser(profile)">
-            <div class="user_info__wrapper">
-              <div class="img__wrapper">
-                <img [src]="profile.PictureUrl" alt="profile picture" *ngIf="profile.PictureUrl;else noPicture">
-                <ng-template #noPicture>
-                  <div class="user__info-initials">
-                    <span *ngIf="profile.FirstName !== ''">{{profile.FirstName.substring(0, 1)}}</span>
-                    <span *ngIf="profile.LastName">.{{profile.LastName.substring(0, 1)}}</span>
-                  </div>
-                </ng-template>
+    <cdk-virtual-scroll-viewport class="users" [itemSize]="5" *ngIf="isShowAutocomplete">
+      <ul>
+        <li *cdkVirtualFor="let profile of profiles.sort()  | search_by: selectedProfile | searchByFullname: selectedProfile "
+            class="example-item" (click)="onSelectUser(profile)">
+          <div class="user_info__wrapper">
+            <div class="img__wrapper">
+              <img [src]="profile.PictureUrl" alt="profile picture" *ngIf="profile.PictureUrl;else noPicture">
+              <ng-template #noPicture>
+                <div class="user__info-initials">
+                  <span *ngIf="profile.FirstName !== ''">{{profile.FirstName.substring(0, 1)}}</span>
+                  <span *ngIf="profile.LastName">.{{profile.LastName.substring(0, 1)}}</span>
+                </div>
+              </ng-template>
+            </div>
+            <div class="user__info">
+              <span class="user__info-name" [innerHTML]="profile?.FirstName | highlight: selectedProfile"></span>
+              <span class="user__info-lastname" [innerHTML]="profile?.LastName | highlight: selectedProfile"></span>
+              <div class="form-group" *ngIf="profile?.WorkPhone">
+                <label for="work_phone">Ext: </label>
+                <a class="user__info-email" id="work_phone" href="tel:{{profile?.WorkPhone}}"
+                   [innerHTML]="profile?.WorkPhone"></a>
               </div>
-              <div class="user__info">
-                <span class="user__info-name"  [innerHTML]="profile?.FirstName | highlight: selectedProfile"></span>
-                <span class="user__info-lastname" [innerHTML]="profile?.LastName | highlight: selectedProfile"></span>
-                <div class="form-group" *ngIf="profile?.WorkPhone">
-                  <label for="work_phone">Ext: </label>
-                  <a class="user__info-email" id="work_phone" href="tel:{{profile?.WorkPhone}}"
-                     [innerHTML]="profile?.WorkPhone"></a>
-                </div>
-                <div class="form-group" *ngIf="profile?.MobilePhone">
-                  <label for="cell_phone">Cell: </label>
-                  <a class="user__info-email" id="cell_phone" href="tel:{{profile?.MobilePhone}}"
-                     [innerHTML]="profile?.MobilePhone"></a>
-                </div>
+              <div class="form-group" *ngIf="profile?.MobilePhone">
+                <label for="cell_phone">Cell: </label>
+                <a class="user__info-email" id="cell_phone" href="tel:{{profile?.MobilePhone}}"
+                   [innerHTML]="profile?.MobilePhone"></a>
               </div>
             </div>
-          </li>
-        </ul>
-        <div class="footer">Search Directory for {{selectedProfile}}</div>
-      </cdk-virtual-scroll-viewport>
+          </div>
+        </li>
+      </ul>
+      <div class="footer">{{(profiles  | search_by: selectedProfile).length}} matches
+        for {{selectedProfile}}</div>
+    </cdk-virtual-scroll-viewport>
   </div>
 </div>
 

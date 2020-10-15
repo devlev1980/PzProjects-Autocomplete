@@ -9,12 +9,19 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {FormsModule} from '@angular/forms';
 import { Search_byPipe } from './pipes/search_by.pipe';
 import { HighlightPipe } from './pipes/highlight.pipe';
+import { SearchByLastnamePipe } from './pipes/search-by-lastname.pipe';
+import { SearchByFullnamePipe } from './pipes/search-by-fullname.pipe';
+import {MatIconModule} from '@angular/material/icon';
+import { MatchHeightDirective } from './directives/match-height.directive';
 
 @NgModule({
   declarations: [
     AutocompleteSpfxWebPartComponent,
     Search_byPipe,
-    HighlightPipe
+    HighlightPipe,
+    SearchByLastnamePipe,
+    SearchByFullnamePipe,
+    MatchHeightDirective
   ],
   imports: [
     BrowserModule,
@@ -22,6 +29,7 @@ import { HighlightPipe } from './pipes/highlight.pipe';
     BrowserAnimationsModule,
     ScrollingModule,
     FormsModule,
+    MatIconModule,
   ],
   providers: [],
   entryComponents: [AutocompleteSpfxWebPartComponent]
