@@ -10,4 +10,5 @@ export interface IProfile {
   MobilePhone: string;
   WorkPhone: string
   FullName: string;
+  Rank?:number;
 }

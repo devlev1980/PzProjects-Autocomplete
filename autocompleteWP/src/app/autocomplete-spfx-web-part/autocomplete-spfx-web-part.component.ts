@@ -74,7 +74,8 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
         MobilePhone: '',
         WorkPhone: '',
         WorkEmail: '',
-        FullName: ''
+        FullName: '',
+        Rank: null
       };
       for (const profileElement of profile) {
         if (
@@ -86,7 +87,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
             (profileElement.Key === 'PictureUrl' && profileElement.Value !== null && profileElement.value !== '') ||
             (profileElement.Key === 'FullName' && profileElement.Value !== '') ||
             (profileElement.Key === 'LastName' && profileElement.Value !== null))) {
-          profileObject.FullName = ''
+          profileObject.FullName = null
           profileObject[profileElement.Key] = profileElement.Value;
           this.profiles.push(profileObject);
         }
@@ -134,7 +135,12 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    * with 'selectedUser' parameter
    */
   onIcon() {
-    window.location.href = environment.searchPageUrl + '/profile?=' + this.selectedProfile;
+    if(this.selectedProfile !== ''){
+      window.location.href = environment.searchPageUrl + '/profile?=' + this.selectedProfile;
+
+    }else{
+      window.location.href = environment.searchPageUrl + '/profile?=';
+    }
   }
 
   ngOnDestroy() {
