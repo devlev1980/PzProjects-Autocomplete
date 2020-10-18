@@ -10,8 +10,8 @@
       </svg>
     </button>
     <button (click)="onIcon()"><img src="{{searchIcon}}" alt="" class="search_icon"></button>
-    <cdk-virtual-scroll-viewport class="users" [itemSize]="5" *ngIf="isShowAutocomplete">
-      <ul>
+    <cdk-virtual-scroll-viewport class="users" [style.height.px]="ulHeight"  [itemSize]="5" *ngIf="isShowAutocomplete">
+      <ul class="autocomplete_wrapper" >
         <li *cdkVirtualFor="let profile of profiles  | search_by: selectedProfile"
             class="example-item" (click)="onSelectUser(profile)">
           <div class="user_info__wrapper">
@@ -41,10 +41,12 @@
           </div>
         </li>
       </ul>
-      <div class="footer">{{(profiles  | search_by: selectedProfile).length}} matches
+      <div class="footer" *ngIf="isShowAutocomplete">{{(profiles  | search_by: selectedProfile).length}} matches
         for {{selectedProfile}}</div>
     </cdk-virtual-scroll-viewport>
+
   </div>
+
 </div>
 
 

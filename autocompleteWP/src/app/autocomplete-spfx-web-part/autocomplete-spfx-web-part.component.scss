@@ -63,7 +63,7 @@ a {
         position: absolute !important;
         right: 0;
         top: 10px;
-        transform: translateX(100px);
+        transform: translateX(113px);
         z-index: 1000;
         width: 100%;
         display: inline-block;
@@ -103,15 +103,35 @@ a {
     padding: 5px;
     //max-height: 306px;
     //height: 100%;
-    height: 306px;
+    //height: 306px;
     overflow-y: auto;
 
     ul > li {
       cursor: pointer;
       color: $textColor;
       padding: 0 15px;
-      height: auto;
+      //height: auto;
       font-size: 18px;
+
+
+    }
+    li{
+      &.mobile{
+        background: red;
+        height: 75px;
+      }
+    }
+    .footer {
+      position: sticky;
+      top: 88%;
+      bottom: 0;
+      width: 100%;
+      /* transform: translateY(-32px); */
+      display: block;
+      z-index: 1000;
+      background: #0b1b37;
+      padding: 10px;
+      color: #fff;
     }
 
     .user_info__wrapper {
@@ -173,12 +193,9 @@ a {
     }
   }
 
-  .footer {
-    background: $footerBg;
-    padding: 10px;
-    color: $white;
-  }
+
 }
+
 
 /* width */
 ::-webkit-scrollbar {

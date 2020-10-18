@@ -19,28 +19,31 @@ export class Search_byPipe implements PipeTransform {
     }
 
 
-    return  employees.filter((profile)=>{
-      if(profile.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase())){
+    return employees.filter((profile) => {
+      if (profile.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().startsWith(searchTerm.toLowerCase())) {
         profile.Rank = 1
         return profile
 
-      }else if(profile.FirstName.toLowerCase().includes(searchTerm.toLowerCase())){
-        profile.Rank = 2;
-      }else if(profile.LastName.toLowerCase().includes(searchTerm.toLowerCase())){
+      } else if (profile.FirstName.toLowerCase().includes(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().includes(searchTerm.toLowerCase()) ){
         profile.Rank = 3;
+        return profile
+      } else if (profile.LastName.toLowerCase().startsWith(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().includes(searchTerm.toLowerCase())) {
+        profile.Rank = 2;
+        return profile
+
+      } else if (profile.LastName.toLowerCase().includes(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().includes(searchTerm.toLowerCase())) {
+        profile.Rank = 4;
         return profile
 
       }
-    }).sort((a,b)=>  {
-      if(a.Rank >= b.Rank){
-        console.log('***',a,b)
+    }).sort((a, b) => {
+      if (a.Rank >= b.Rank) {
         return 1
-      }else{
-        console.log('---',a,b)
+      } else {
         return -1
       }
 
-   });
+    });
 
 
     // const sortedByFirstName = employees.filter((user) => {

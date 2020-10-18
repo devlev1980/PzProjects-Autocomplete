@@ -31,6 +31,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
   selectedProfile: string = '';
   searchIcon: string = environment.searchICon;
   private sink = new SubSink();
+  ulHeight: number = 0;
 
   /*
   * Close autocomplete on click outside
@@ -115,6 +116,48 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    */
   onInput(): void {
     this.isShowAutocomplete = this.selectedProfile !== '';
+    if (this.isShowAutocomplete) {
+      setTimeout(() => {
+         this.ulHeight = 0;
+
+        let virtualScroll = document.querySelector('.users');
+        let vsChildren = virtualScroll.children
+        console.log('vs_children', vsChildren)
+        let children = vsChildren[0].children;
+        let ul = children[0];
+        console.log(ul)
+        // let children = ul[0].children as any
+        for (let i = 0; i < ul.children.length; i++) {
+          if (i <= 4) {
+            this.ulHeight += (<HTMLElement>ul.children[i]).getBoundingClientRect().height;
+            this.cdr.detectChanges();
+          }
+        }
+      }, 500);
+
+
+    }
+
+    // if (this.isShowAutocomplete) {
+    //
+    //   setTimeout(() => {
+    //     this.profiles.forEach((profile, index) => {
+    //       if (index <= 4) {
+    //         console.log(profile);
+    //         if (profile.MobilePhone) {
+    //           // let children = ul[0].children as any
+    //               let li = document.getElementsByClassName('example-item') as HTMLCollection;
+    //           for (let i = 0; i < li.length; i++) {
+    //             if (i <= 4) {
+    //              li[i].classList.add('mobile')
+    //               this.cdr.detectChanges();
+    //             }
+    //           }
+    //         }
+    //       }
+    //     })
+    //   }, 300)
+    // }
     this.cdr.detectChanges();
 
 
@@ -135,11 +178,11 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    * with 'selectedUser' parameter
    */
   onIcon() {
-    if(this.selectedProfile !== ''){
+    if (this.selectedProfile !== '') {
       window.location.href = environment.searchPageUrl + '/profile?=' + this.selectedProfile;
 
-    }else{
-      window.location.href = environment.searchPageUrl + '/profile?=';
+    } else {
+      window.location.href = environment.searchPageUrl;
     }
   }
 

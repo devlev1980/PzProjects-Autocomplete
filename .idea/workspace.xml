@@ -6,10 +6,9 @@
       <change beforePath="$PROJECT_DIR$/autocompleteWP/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/models/profile.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/models/profile.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +186,7 @@
       <workItem from="1601982346128" duration="1223000" />
       <workItem from="1601988550596" duration="59646000" />
       <workItem from="1602497815704" duration="9240000" />
-      <workItem from="1602577734865" duration="45261000" />
+      <workItem from="1602577734865" duration="63993000" />
     </task>
     <task id="LOCAL‎00001" summary="add project">
       <created>1598800237065</created>
@@ -261,7 +260,13 @@
       <option name="presentableId" value="LOCAL‎00012" />
       <updated>1602748484460</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL‎00013" summary="sorting by rank">
+      <created>1602769332775</created>
+      <option name="number" value="LOCAL‎00013" />
+      <option name="presentableId" value="LOCAL‎00013" />
+      <updated>1602769332775</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +285,8 @@
     <MESSAGE value="cleaning and change README.md" />
     <MESSAGE value="cleaning and add comments in pipes and interfaces&#10;remove img folder in assets" />
     <MESSAGE value="working sorting" />
-    <option name="LAST_COMMIT_MESSAGE" value="working sorting" />
+    <MESSAGE value="sorting by rank" />
+    <option name="LAST_COMMIT_MESSAGE" value="sorting by rank" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="417" key="#TSLint" timestamp="1598863725434">
@@ -303,36 +309,36 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="372" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602073492061" />
-    <state x="569" y="81" key="CommitChangelistDialog2" timestamp="1602748482635">
+    <state x="569" y="81" key="CommitChangelistDialog2" timestamp="1602769331398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="379" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602580153342" />
-    <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602748482635" />
+    <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602769331398" />
     <state x="453" y="164" key="FileChooserDialogImpl" timestamp="1602577697068">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="453" y="164" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1602577697068" />
     <state x="679" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600181138871" />
-    <state width="1899" height="271" key="GridCell.Tab.0.bottom" timestamp="1602768895093">
+    <state width="1899" height="271" key="GridCell.Tab.0.bottom" timestamp="1603019018699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602768895093" />
-    <state width="1899" height="271" key="GridCell.Tab.0.center" timestamp="1602768895093">
+    <state width="1899" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603019018699" />
+    <state width="1899" height="271" key="GridCell.Tab.0.center" timestamp="1603019018698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602768895093" />
-    <state width="1899" height="271" key="GridCell.Tab.0.left" timestamp="1602768895093">
+    <state width="1899" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603019018698" />
+    <state width="1899" height="271" key="GridCell.Tab.0.left" timestamp="1603019018698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602768895093" />
-    <state width="1899" height="271" key="GridCell.Tab.0.right" timestamp="1602768895093">
+    <state width="1899" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603019018698" />
+    <state width="1899" height="271" key="GridCell.Tab.0.right" timestamp="1603019018699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602768895093" />
+    <state width="1899" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603019018699" />
     <state x="430" y="61" key="RollbackChangesDialog" timestamp="1602070380283">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -345,11 +351,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599375211755" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1602748487183">
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1602769338074">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="367" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602580158420" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602748487183" />
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602769338074" />
     <state x="507" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601988590455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
