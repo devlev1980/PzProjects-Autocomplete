@@ -45,37 +45,6 @@ export class Search_byPipe implements PipeTransform {
 
     });
 
-
-    // const sortedByFirstName = employees.filter((user) => {
-    //   user.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
-    //   // user.LastName.toLowerCase().includes(searchTerm.toLowerCase())
-    //   user.FullName.toLowerCase().endsWith(searchTerm.toLowerCase())
-    // });
-
-
-    // .sort((a, b) => a.FirstName.localeCompare(b.FirstName, 'es', {sensitivity: 'base'}))
-    // .reduce((acc,el)=>{
-    //   console.log('acc',acc);
-    //   console.log('el',el);
-    //   acc[el.FirstName] = [...acc[el.FirstName] || [],el];
-    //   return acc
-    // },[])
-
-
-    // return _.get(a, 'lastName', '').localeCompare(_.get(b, 'lastName', ''))
-    //   || _.get(a, 'firstName', '').localeCompare(_.get(b, 'firstName', ''))
-    //   || (_.get(a, 'lastName', '') > _.get(b, 'lastName', '') ? 1 : -1);
-
-    // .sort((a,b)=>{
-    //   return a.FirstName.localeCompare(b.FirstName) ||
-    //     b.LastName.localeCompare(a.LastName) ||
-    //     a.LastName < b.LastName? 1: -1
-    // });
-
-
-    // return employees.filter((user) => {
-    //   return user.FullName.toLowerCase().startsWith(searchTerm.toLowerCase())
-    // }).sort((profile1, profile2) => profile1.FullName.localeCompare(profile2.FullName)).reverse();
   }
 
 }

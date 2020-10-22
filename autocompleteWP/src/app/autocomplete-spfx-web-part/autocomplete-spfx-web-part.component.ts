@@ -36,6 +36,10 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
   /*
   * Close autocomplete on click outside
   * */
+  isShowFooterForAutocomplete: boolean = false;
+  smallAutocomplete: boolean = false;
+   miniAutocomplete: boolean = false;
+
   @HostListener('document:click', ['$event'])
   handleOutsideClick(event) {
     if (!this.autoComplete.nativeElement.contains(event.target)) {
@@ -96,8 +100,6 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
     }
     this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
     this.setFullName(this.profiles);
-    // this.profiles = this.profiles.sort((a,b)=> a.FullName.localeCompare(b.FullName))
-
   }
 
   /**
@@ -113,54 +115,57 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
 
   /**
    * Show/hide autocomplete on typing
+   *
    */
   onInput(): void {
     this.isShowAutocomplete = this.selectedProfile !== '';
+    this.changeHeightOfAutocompleteDynamically()
+    this.cdr.detectChanges();
+  }
+
+  /**
+   *  Change height of the autocomplete dynamically
+   */
+  changeHeightOfAutocompleteDynamically() {
     if (this.isShowAutocomplete) {
       setTimeout(() => {
-         this.ulHeight = 0;
+        this.ulHeight = 2;
+        this.isShowFooterForAutocomplete = true;
+        const virtualScroll = document.querySelector('.users');
+        const vsChildren = virtualScroll.children
+        const children = vsChildren[0].children;
+        const ul = children[0];
 
-        let virtualScroll = document.querySelector('.users');
-        let vsChildren = virtualScroll.children
-        console.log('vs_children', vsChildren)
-        let children = vsChildren[0].children;
-        let ul = children[0];
-        console.log(ul)
-        // let children = ul[0].children as any
         for (let i = 0; i < ul.children.length; i++) {
+
           if (i <= 4) {
-            this.ulHeight += (<HTMLElement>ul.children[i]).getBoundingClientRect().height;
-            this.cdr.detectChanges();
+            this.ulHeight += (<HTMLElement>ul.children[i]).getBoundingClientRect().height + 5;
+
+
+
+            if(this.ulHeight < 346){
+              this.smallAutocomplete = true;
+              this.miniAutocomplete = false;
+              this.cdr.detectChanges();
+
+              if(this.ulHeight === 68){
+                this.miniAutocomplete = true;
+                this.smallAutocomplete = false;
+                this.cdr.detectChanges();
+              }
+            }else{
+              this.smallAutocomplete = false;
+              this.miniAutocomplete = false;
+              this.cdr.detectChanges();
+            }
+
+
+
           }
+
         }
       }, 500);
-
-
     }
-
-    // if (this.isShowAutocomplete) {
-    //
-    //   setTimeout(() => {
-    //     this.profiles.forEach((profile, index) => {
-    //       if (index <= 4) {
-    //         console.log(profile);
-    //         if (profile.MobilePhone) {
-    //           // let children = ul[0].children as any
-    //               let li = document.getElementsByClassName('example-item') as HTMLCollection;
-    //           for (let i = 0; i < li.length; i++) {
-    //             if (i <= 4) {
-    //              li[i].classList.add('mobile')
-    //               this.cdr.detectChanges();
-    //             }
-    //           }
-    //         }
-    //       }
-    //     })
-    //   }, 300)
-    // }
-    this.cdr.detectChanges();
-
-
   }
 
   /**
@@ -179,7 +184,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    */
   onIcon() {
     if (this.selectedProfile !== '') {
-      window.location.href = environment.searchPageUrl + '/profile?=' + this.selectedProfile;
+      window.location.href = environment.searchPageUrl + '/?profile=' + this.selectedProfile;
 
     } else {
       window.location.href = environment.searchPageUrl;
@@ -190,13 +195,22 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
     this.sink.unsubscribe();
   }
 
+  /**
+   * Click on 'X' to clear the input field
+   */
   onClearInput() {
     this.selectedProfile = '';
     this.isShowAutocomplete = false;
-
   }
 
-
+  /**
+   * Redirect to the Search page with selected profile parameters
+   */
+  onNavigate() {
+    if (this.selectedProfile) {
+      window.location.href = environment.searchPageUrl + '/?profile=' + this.selectedProfile;
+    }
+  }
 }
 
 
