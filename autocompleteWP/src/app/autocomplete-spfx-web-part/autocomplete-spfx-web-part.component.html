@@ -1,7 +1,7 @@
 <div class="container" #autocomplete>
   <div class="searchbar_container">
     <input type="text" class="autocomplete" placeholder="FIND PEOPLE..." #inputRef (input)="onInput()"
-           [(ngModel)]="selectedProfile">
+           [(ngModel)]="selectedProfile" (keydown.enter)="onSelectUserByEnter(selectedProfile)">
     <button (click)="onClearInput()" class="btn_clear" *ngIf="inputRef.value !== ''">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px">
         <path d="M0 0h24v24H0z" fill="none"/>
@@ -13,16 +13,21 @@
     <button (click)="onIcon()">
       <img src="{{searchIcon}}" alt="" class="search_icon">
     </button>
-    <div class="footer" [class.small_autocomplete]="smallAutocomplete" [class.mini_autocomplete]="miniAutocomplete" *ngIf="isShowFooterForAutocomplete && isShowAutocomplete">{{(profiles  | search_by: selectedProfile).length}} matches
-      for {{selectedProfile}}</div>
-    <cdk-virtual-scroll-viewport class="users" [style.height.px]="ulHeight"  [itemSize]="5" *ngIf="isShowAutocomplete">
 
+    <div class="footer" [class.small_autocomplete]="smallAutocomplete && (profiles | search_by: selectedProfile).length > 0"
+         [class.mini_autocomplete]="miniAutocomplete"
+         [class.only_footer]="(profiles | search_by: selectedProfile).length === 0"
+         [class.last_element]="lastElement"
+         *ngIf="isShowFooterForAutocomplete && isShowAutocomplete">
+      {{(profiles  | search_by: selectedProfile).length}} matches
+      for {{selectedProfile}}
+    </div>
+    <cdk-virtual-scroll-viewport (scroll)="onScroll($event)" class="users" [style.height.px]="ulHeight"  [itemSize]="5" *ngIf="isShowAutocomplete && (profiles | search_by: selectedProfile).length>0">
       <ul class="autocomplete_wrapper" >
-
         <li *cdkVirtualFor="let profile of profiles  | search_by: selectedProfile"
             class="example-item" (click)="onSelectUser(profile)">
           <div class="user_info__wrapper">
-            <div class="img__wrapper" (click)="onNavigate()">
+            <div class="img__wrapper" >
               <img [src]="profile.PictureUrl" alt="profile picture" *ngIf="profile.PictureUrl;else noPicture">
               <ng-template #noPicture>
                 <div class="user__info-initials">
@@ -32,8 +37,8 @@
               </ng-template>
             </div>
             <div class="user__info">
-              <span class="user__info-name" (click)="onNavigate()" [innerHTML]="profile?.FirstName | highlight: selectedProfile"></span>
-              <span class="user__info-lastname" (click)="onNavigate()" [innerHTML]="profile?.LastName | highlight: selectedProfile"></span>
+              <span class="user__info-name"  [innerHTML]="profile?.FirstName | highlight: selectedProfile"></span>
+              <span class="user__info-lastname"  [innerHTML]="profile?.LastName | highlight: selectedProfile"></span>
               <div class="form-group" *ngIf="profile?.WorkPhone">
                 <label for="work_phone">Ext: </label>
                 <a class="user__info-email" id="work_phone" href="tel:{{profile?.WorkPhone}}"
@@ -48,11 +53,8 @@
           </div>
         </li>
       </ul>
-
     </cdk-virtual-scroll-viewport>
-
   </div>
-
 </div>
 
 

@@ -1,11 +1,10 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy, ChangeDetectorRef,
   Component,
   ElementRef,
   HostListener,
   Input, OnDestroy,
-  OnInit, QueryList,
+  OnInit,
   Renderer2,
   ViewChild,
   ViewEncapsulation
@@ -23,7 +22,6 @@ import {SubSink} from 'subsink';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
-  @Input() description: string;
   @ViewChild('autocomplete') autoComplete: ElementRef;
   profiles: IProfile[] = [];
   selectedEmployee: IProfile;
@@ -33,17 +31,30 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
   private sink = new SubSink();
   ulHeight: number = 0;
 
-  /*
-  * Close autocomplete on click outside
-  * */
+
   isShowFooterForAutocomplete: boolean = false;
   smallAutocomplete: boolean = false;
    miniAutocomplete: boolean = false;
+   onlyFooter: boolean = false;
+   lastElement: boolean = false;
 
+  /*
+* Close autocomplete on click outside
+* */
   @HostListener('document:click', ['$event'])
   handleOutsideClick(event) {
     if (!this.autoComplete.nativeElement.contains(event.target)) {
       this.isShowAutocomplete = false;
+    }
+  }
+  @HostListener('scroll', ['$event'])
+  onScroll(event: any) {
+    // visible height + pixel scrolled >= total height
+    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
+      console.log("End");
+      this.lastElement = true;
+    }else{
+      this.lastElement = false;
     }
   }
 
@@ -63,6 +74,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
       }))
   }
 
+
   /**
    * transform profiles values to keys
    * add fullname property to profile
@@ -80,7 +92,11 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
         WorkPhone: '',
         WorkEmail: '',
         FullName: '',
-        Rank: null
+        FirstNameRankOnStart: null,
+        FirstNameRankNotStart: null,
+        LastNameRankOnStart: null,
+        LastNameRankNotOnStart:null,
+        Rank: 0
       };
       for (const profileElement of profile) {
         if (
@@ -132,37 +148,35 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
         this.ulHeight = 2;
         this.isShowFooterForAutocomplete = true;
         const virtualScroll = document.querySelector('.users');
-        const vsChildren = virtualScroll.children
-        const children = vsChildren[0].children;
-        const ul = children[0];
+        if(virtualScroll){
+          const vsChildren = virtualScroll.children
+          const children = vsChildren[0].children;
+          const ul = children[0];
+          for (let i = 0; i < ul.children.length; i++) {
 
-        for (let i = 0; i < ul.children.length; i++) {
-
-          if (i <= 4) {
-            this.ulHeight += (<HTMLElement>ul.children[i]).getBoundingClientRect().height + 5;
-
-
-
-            if(this.ulHeight < 346){
-              this.smallAutocomplete = true;
-              this.miniAutocomplete = false;
+            if (i <= 4) {
+              this.ulHeight += (<HTMLElement>ul.children[i]).getBoundingClientRect().height + 5;
               this.cdr.detectChanges();
 
-              if(this.ulHeight === 68){
-                this.miniAutocomplete = true;
+              if(this.ulHeight < 346){
+                this.smallAutocomplete = true;
+                this.miniAutocomplete = false;
+                this.lastElement = false;
+                this.cdr.detectChanges();
+
+                if(this.ulHeight === 68){
+                  this.miniAutocomplete = true;
+                  this.smallAutocomplete = false;
+                  this.cdr.detectChanges();
+                }
+
+              }else{
                 this.smallAutocomplete = false;
+                this.miniAutocomplete = false;
                 this.cdr.detectChanges();
               }
-            }else{
-              this.smallAutocomplete = false;
-              this.miniAutocomplete = false;
-              this.cdr.detectChanges();
             }
-
-
-
           }
-
         }
       }, 500);
     }
@@ -175,6 +189,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    */
   onSelectUser(profile: IProfile): void {
     this.selectedProfile = profile.FirstName + ' ' + profile.LastName;
+    window.location.href = environment.searchPageUrl + '/?profile=' + this.selectedProfile;
     this.isShowAutocomplete = false;
   }
 
@@ -191,9 +206,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy() {
-    this.sink.unsubscribe();
-  }
+
 
   /**
    * Click on 'X' to clear the input field
@@ -206,10 +219,13 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
   /**
    * Redirect to the Search page with selected profile parameters
    */
-  onNavigate() {
-    if (this.selectedProfile) {
+  onSelectUserByEnter(selectedProfile: string) {
+    if(selectedProfile){
       window.location.href = environment.searchPageUrl + '/?profile=' + this.selectedProfile;
     }
+  }
+  ngOnDestroy() {
+    this.sink.unsubscribe();
   }
 }
 

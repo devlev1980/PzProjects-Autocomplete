@@ -9,19 +9,15 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {FormsModule} from '@angular/forms';
 import { Search_byPipe } from './pipes/search_by.pipe';
 import { HighlightPipe } from './pipes/highlight.pipe';
-import { SearchByLastnamePipe } from './pipes/search-by-lastname.pipe';
-import { SearchByFullnamePipe } from './pipes/search-by-fullname.pipe';
 import {MatIconModule} from '@angular/material/icon';
-import { MatchHeightDirective } from './directives/match-height.directive';
+import { SortCardsPipe } from './pipes/sort-cards.pipe';
 
 @NgModule({
   declarations: [
     AutocompleteSpfxWebPartComponent,
     Search_byPipe,
     HighlightPipe,
-    SearchByLastnamePipe,
-    SearchByFullnamePipe,
-    MatchHeightDirective
+    SortCardsPipe,
   ],
   imports: [
     BrowserModule,

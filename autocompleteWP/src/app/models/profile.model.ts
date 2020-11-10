@@ -10,5 +10,9 @@ export interface IProfile {
   MobilePhone: string;
   WorkPhone: string
   FullName: string;
-  Rank?:number;
+  FirstNameRankOnStart?:number;
+  FirstNameRankNotStart?:number;
+  LastNameRankOnStart?: number;
+  LastNameRankNotOnStart?: number;
+  Rank?: number
 }

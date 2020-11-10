@@ -195,13 +195,21 @@ a {
   padding: 5.8px;
   color: #fff;
 
-  &.small_autocomplete{
+  &.small_autocomplete,&.mini_autocomplete,&.only_footer{
     width: calc(100% - 116px);
+  }
+
+  &.small_autocomplete{
     top: 107%;
   }
   &.mini_autocomplete{
-    width: calc(100% - 116px);
     top: 117%;
+  }
+  &.only_footer{
+    top: 165%;
+  }
+  &.last_element{
+    top: 105%;
   }
 }
 

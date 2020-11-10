@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/directives/match-height.directive.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/directives/match-height.directive.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/models/profile.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/models/profile.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search-by-fullname.pipe.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search-by-fullname.pipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search-by-lastname.pipe.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search-by-lastname.pipe.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +49,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="bugs_06.10" />
+        <entry key="$PROJECT_DIR$" value="dev_03" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,7 +72,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="ts.external.directory.path" value="D:\PZProject\Mobileye\searchbar2\autocompleteWP\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -185,7 +211,8 @@
       <workItem from="1601988550596" duration="59646000" />
       <workItem from="1602497815704" duration="9240000" />
       <workItem from="1602577734865" duration="86619000" />
-      <workItem from="1603177809334" duration="11892000" />
+      <workItem from="1603177809334" duration="52943000" />
+      <workItem from="1604990496977" duration="560000" />
     </task>
     <task id="LOCAL‎00001" summary="add project">
       <created>1598800237065</created>
@@ -271,11 +298,29 @@
       <option name="presentableId" value="LOCAL‎00014" />
       <updated>1603019547211</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL‎00015" summary="working on dynamic footer">
+      <created>1603353392536</created>
+      <option name="number" value="LOCAL‎00015" />
+      <option name="presentableId" value="LOCAL‎00015" />
+      <updated>1603353392536</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add project" />
@@ -292,7 +337,8 @@
     <MESSAGE value="working sorting" />
     <MESSAGE value="sorting by rank" />
     <MESSAGE value="working on dynamic height of autocomplete" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on dynamic height of autocomplete" />
+    <MESSAGE value="working on dynamic footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on dynamic footer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="417" key="#TSLint" timestamp="1598863725434">
@@ -311,57 +357,59 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602676990834" />
-    <state x="372" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602073492061">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="558" y="135" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603357031553">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="372" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602073492061" />
-    <state x="569" y="81" key="CommitChangelistDialog2" timestamp="1603019545031">
+    <state x="558" y="135" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603357031553" />
+    <state x="569" y="81" key="CommitChangelistDialog2" timestamp="1603353389911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="379" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602580153342" />
-    <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603019545031" />
+    <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603353389911" />
     <state x="453" y="164" key="FileChooserDialogImpl" timestamp="1602577697068">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="453" y="164" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1602577697068" />
     <state x="679" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600181138871" />
-    <state width="1899" height="271" key="GridCell.Tab.0.bottom" timestamp="1603353124943">
+    <state width="1899" height="271" key="GridCell.Tab.0.bottom" timestamp="1603959210947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603353124943" />
-    <state width="1899" height="271" key="GridCell.Tab.0.center" timestamp="1603353124943">
+    <state width="1899" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603959210947" />
+    <state width="1899" height="271" key="GridCell.Tab.0.center" timestamp="1603959210947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603353124943" />
-    <state width="1899" height="271" key="GridCell.Tab.0.left" timestamp="1603353124943">
+    <state width="1899" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603959210947" />
+    <state width="1899" height="271" key="GridCell.Tab.0.left" timestamp="1603959210947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603353124943" />
-    <state width="1899" height="271" key="GridCell.Tab.0.right" timestamp="1603353124943">
+    <state width="1899" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603959210947" />
+    <state width="1899" height="271" key="GridCell.Tab.0.right" timestamp="1603959210947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603353124943" />
+    <state width="1899" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603959210947" />
     <state x="430" y="61" key="RollbackChangesDialog" timestamp="1602070380283">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="430" y="61" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1602070380283" />
-    <state x="151" y="0" key="SettingsEditor" timestamp="1602577567947">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="227" y="0" key="SettingsEditor" timestamp="1604991069313">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="151" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1602577567947" />
+    <state x="227" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604991069313" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1599375211755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599375211755" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1603019548739">
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1604990788798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="367" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602580158420" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603019548739" />
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604990788798" />
     <state x="507" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601988590455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

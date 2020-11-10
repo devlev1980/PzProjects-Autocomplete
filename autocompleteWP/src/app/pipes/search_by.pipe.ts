@@ -1,7 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {IProfile} from '../models/profile.model';
-import * as _ from 'lodash';
-import {groupBy} from 'rxjs/operators';
 
 @Pipe({
   name: 'search_by'
@@ -13,37 +11,42 @@ export class Search_byPipe implements PipeTransform {
    * @param employees
    * @param searchTerm
    */
+
+
   transform(employees: IProfile[], searchTerm: string): IProfile[] {
     if (!employees || !searchTerm) {
       return employees;
     }
-
-
-    return employees.filter((profile) => {
-      if (profile.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().startsWith(searchTerm.toLowerCase())) {
-        profile.Rank = 1
+   return  employees.filter((profile) => {
+      if(profile.FirstName.toLowerCase().startsWith(searchTerm.toLowerCase()) && profile.LastName.toLowerCase().startsWith(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().startsWith(searchTerm.toLowerCase())){
+        profile.FirstNameRankOnStart = profile.FirstName.toLowerCase().indexOf(searchTerm.toLowerCase())
         return profile
 
-      } else if (profile.FirstName.toLowerCase().includes(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().includes(searchTerm.toLowerCase()) ){
-        profile.Rank = 3;
-        return profile
-      } else if (profile.LastName.toLowerCase().startsWith(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().includes(searchTerm.toLowerCase())) {
-        profile.Rank = 2;
-        return profile
-
-      } else if (profile.LastName.toLowerCase().includes(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().includes(searchTerm.toLowerCase())) {
-        profile.Rank = 4;
-        return profile
+      }else if(profile.FirstName.toLowerCase().includes(searchTerm.toLowerCase()) || profile.FullName.toLowerCase().includes(searchTerm.toLowerCase())){
+        profile.FirstNameRankNotStart = profile.FirstName.toLowerCase().indexOf(searchTerm.toLowerCase());
 
       }
-    }).sort((a, b) => {
-      if (a.Rank >= b.Rank) {
-        return 1
-      } else {
-        return -1
-      }
+      else if ( profile.LastName.toLowerCase().startsWith(searchTerm.toLowerCase())){
+        profile.LastNameRankOnStart = profile.LastName.toLowerCase().indexOf(searchTerm.toLowerCase()) + 20;
+      }else if(profile.LastName.toLowerCase().includes(searchTerm.toLowerCase())) {
+        profile.LastNameRankNotOnStart = profile.LastName.toLowerCase().indexOf(searchTerm.toLowerCase()) + 20;
 
-    });
+      }
+    })
+    .sort((a, b) => {
+        if (a.FirstNameRankOnStart > b.FirstNameRankOnStart) {
+          return 1
+        } else {
+          return -1;
+        }
+
+      }).reverse().sort((b,c)=>{
+        if(b.LastName > c.LastName){
+          return 1
+        }else{
+          return -1
+        }
+     })
 
   }
 

@@ -5,7 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class HighlightPipe implements PipeTransform {
   color: string = '';
-
   /**
    * Highlight typed character in autocomplete
    * @param employee

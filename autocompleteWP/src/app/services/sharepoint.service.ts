@@ -10,8 +10,7 @@ const CACHE_SIZE = 1;
 })
 export class SharepointService {
   private cache$: Observable<any>;
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   /**
    * Get profiles from cache
