@@ -17,8 +17,8 @@ Version|Date|Comments
 
 ## Technology versions used
 * Angular -
-Angular CLI: 7.0.7;
-Typescript                   2.4.2
+Angular CLI: 8.2.2;
+Typescript                   3.4.5
 Webpack                      3.6.0
 
 * Node.js- v10.22.0
@@ -71,7 +71,12 @@ This project contains SharePoint Framework extensions that illustrates next feat
 * Using @pnp/sp
 * Using Microsoft Graph API
   [Consume Microsoft Graph](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aad-tutorial)
-* React
-* Using `@fluentui/react` A collection of UX frameworks
-  Fluent UI React is the official open-source React front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products.
-  [fluentui](https://developer.microsoft.com/en-us/fluentui#/get-started)
+* Angular Elements
+* Using `@angular/material` A collection of UI Components
+     Angular Material is a UI component library for Angular 2+/Angular JS
+     developers. Angular Material components help in constructing
+     attractive, consistent, and functional web pages and web
+     applications while adhering to modern web design principles like
+     browser portability, device independence, and graceful degradation.
+     
+     Main Website: https://material.angular.io/

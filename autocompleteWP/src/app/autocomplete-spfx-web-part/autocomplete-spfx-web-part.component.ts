@@ -19,24 +19,21 @@ import {SubSink} from 'subsink';
   templateUrl: './autocomplete-spfx-web-part.component.html',
   styleUrls: ['./autocomplete-spfx-web-part.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
-  @ViewChild('autocomplete') autoComplete: ElementRef;
+  @ViewChild('autocomplete',{static: false}) autoComplete: ElementRef;
   profiles: IProfile[] = [];
   selectedEmployee: IProfile;
   isShowAutocomplete: boolean = false;
   selectedProfile: string = '';
   searchIcon: string = environment.searchICon;
-  private sink = new SubSink();
   ulHeight: number = 0;
-
-
   isShowFooterForAutocomplete: boolean = false;
   smallAutocomplete: boolean = false;
    miniAutocomplete: boolean = false;
    onlyFooter: boolean = false;
    lastElement: boolean = false;
+  private sink = new SubSink();
 
   /*
 * Close autocomplete on click outside
@@ -70,7 +67,6 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
     this.sink.add(this.spService.getProfilesCached()
       .subscribe((data) => {
         this.getFields(data);
-        this.cdr.detectChanges();
       }))
   }
 

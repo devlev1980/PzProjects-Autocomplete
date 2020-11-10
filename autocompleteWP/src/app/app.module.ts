@@ -34,7 +34,7 @@ export class AppModule {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap() {
-    const el = createCustomElement(AutocompleteSpfxWebPartComponent, { injector: this.injector });
-    customElements.define('app-autocomplete-spfx-web-part', el);
+      const el = createCustomElement(AutocompleteSpfxWebPartComponent, { injector: this.injector });
+      customElements.define('app-autocomplete-spfx-web-part', el);
   }
 }
