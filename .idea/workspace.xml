@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/pipes/search_by.pipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="bugs_06.10" />
+        <entry key="$PROJECT_DIR$" value="dev_03" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -153,10 +153,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.bundle" />
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.clean" />
         <item itemvalue="npm.bundle (1)" />
+        <item itemvalue="npm.bundle" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -277,6 +277,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add project" />
     <MESSAGE value="adding sort&#10;fix the search pipe&#10;add models folder" />
@@ -325,26 +328,26 @@
     </state>
     <state x="453" y="164" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1602577697068" />
     <state x="679" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600181138871" />
-    <state width="1899" height="271" key="GridCell.Tab.0.bottom" timestamp="1603353124943">
+    <state width="1899" height="269" key="GridCell.Tab.0.bottom" timestamp="1605107277595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603353124943" />
-    <state width="1899" height="271" key="GridCell.Tab.0.center" timestamp="1603353124943">
+    <state width="1899" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605107277595" />
+    <state width="1899" height="269" key="GridCell.Tab.0.center" timestamp="1605107277595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603353124943" />
-    <state width="1899" height="271" key="GridCell.Tab.0.left" timestamp="1603353124943">
+    <state width="1899" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605107277595" />
+    <state width="1899" height="269" key="GridCell.Tab.0.left" timestamp="1605107277595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603353124943" />
-    <state width="1899" height="271" key="GridCell.Tab.0.right" timestamp="1603353124943">
+    <state width="1899" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605107277595" />
+    <state width="1899" height="269" key="GridCell.Tab.0.right" timestamp="1605107277595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1259" height="154" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602577707363" />
-    <state width="1899" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603353124943" />
+    <state width="1899" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605107277595" />
     <state x="430" y="61" key="RollbackChangesDialog" timestamp="1602070380283">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -357,11 +360,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599375211755" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1603019548739">
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1605107551364">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="367" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602580158420" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603019548739" />
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605107551364" />
     <state x="507" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601988590455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
