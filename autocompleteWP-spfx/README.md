@@ -13,7 +13,7 @@ External-Sharing | PzProjects
 
 Version|Date|Comments
 -------|----|--------
-1.0|October 03, 2020|Initial version
+1.0|October 19, 2020|Initial version
 
 ## Technology versions used
 * Angular -
@@ -65,12 +65,7 @@ Please follow this guide in order to set up your SharePoint Framework developmen
 ## Features
 
 This project contains SharePoint Framework extensions that illustrates next features:
-* Command extension
-  [ListView Command Set](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/building-simple-cmdset-with-dialog-api)
-* Custom dialog control using `@microsoft/sp-dialog` package
-* Using @pnp/sp
-* Using Microsoft Graph API
-  [Consume Microsoft Graph](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aad-tutorial)
+*Search profile by first name,last name or full name and highlight the search result in autocomplete
 * Angular Elements
 * Using `@angular/material` A collection of UI Components
      Angular Material is a UI component library for Angular 2+/Angular JS

@@ -20,7 +20,7 @@ import {SubSink} from 'subsink';
   styleUrls: ['./autocomplete-spfx-web-part.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
+export class AutocompleteSpfxWebPartComponent implements OnInit {
   @ViewChild('autocomplete',{static: false}) autoComplete: ElementRef;
   profiles: IProfile[] = [];
   selectedEmployee: IProfile;
@@ -33,6 +33,8 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    miniAutocomplete: boolean = false;
    onlyFooter: boolean = false;
    lastElement: boolean = false;
+  searchByEmployeeOnHoverIcon: string = environment.searchByEmployeeOnHoverIcon;
+  searchByEmployeeDefaultIcon: string = environment.searchICon;
   private sink = new SubSink();
 
   /*
@@ -48,7 +50,6 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
   onScroll(event: any) {
     // visible height + pixel scrolled >= total height
     if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
-      console.log("End");
       this.lastElement = true;
     }else{
       this.lastElement = false;
@@ -185,7 +186,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    */
   onSelectUser(profile: IProfile): void {
     this.selectedProfile = profile.FirstName + ' ' + profile.LastName;
-    window.location.href = environment.searchPageUrl + '/?profile=' + this.selectedProfile;
+    window.location.href = environment.searchPageUrl + '/PeopleSearch' + '/?profile=' + this.selectedProfile;
     this.isShowAutocomplete = false;
   }
 
@@ -195,7 +196,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    */
   onIcon() {
     if (this.selectedProfile !== '') {
-      window.location.href = environment.searchPageUrl + '/?profile=' + this.selectedProfile;
+      window.location.href = environment.searchPageUrl + '/PeopleSearch' + '/?profile=' + this.selectedProfile;
 
     } else {
       window.location.href = environment.searchPageUrl;
@@ -217,12 +218,12 @@ export class AutocompleteSpfxWebPartComponent implements OnInit, OnDestroy {
    */
   onSelectUserByEnter(selectedProfile: string) {
     if(selectedProfile){
-      window.location.href = environment.searchPageUrl + '/?profile=' + this.selectedProfile;
+      window.location.href = environment.searchPageUrl + '/PeopleSearch' + '/?profile=' + this.selectedProfile;
     }
   }
-  ngOnDestroy() {
-    this.sink.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.sink.unsubscribe();
+  // }
 }
 
 

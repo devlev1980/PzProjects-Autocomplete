@@ -11,7 +11,8 @@
     </button>
 
     <button (click)="onIcon()">
-      <img src="{{searchIcon}}" alt="" class="search_icon">
+      <img src="{{searchIcon}}" alt="" class="search_icon"  (mouseover)="searchIcon = searchByEmployeeOnHoverIcon"
+           (mouseout)="searchIcon = searchByEmployeeDefaultIcon">
     </button>
 
     <div class="footer" [class.small_autocomplete]="smallAutocomplete && (profiles | search_by: selectedProfile).length > 0"
