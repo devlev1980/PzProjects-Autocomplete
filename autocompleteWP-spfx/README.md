@@ -65,7 +65,7 @@ Please follow this guide in order to set up your SharePoint Framework developmen
 ## Features
 
 This project contains SharePoint Framework extensions that illustrates next features:
-*Search profile by first name,last name or full name and highlight the search result in autocomplete
+*Search profile by first name,last name or full name and highlight the search result in autocomplete         
 * Angular Elements
 * Using `@angular/material` A collection of UI Components
      Angular Material is a UI component library for Angular 2+/Angular JS

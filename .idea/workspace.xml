@@ -20,18 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/src/webparts/autocompleteSpfx/AutocompleteSpfxWebPart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/src/webparts/autocompleteSpfx/AutocompleteSpfxWebPart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +204,7 @@
       <workItem from="1604990496977" duration="1009000" />
       <workItem from="1604991775831" duration="7479000" />
       <workItem from="1605016128144" duration="483000" />
-      <workItem from="1605613513675" duration="9312000" />
+      <workItem from="1605613513675" duration="16953000" />
     </task>
     <task id="LOCAL‎00001" summary="add project">
       <created>1598800237065</created>
@@ -313,7 +302,13 @@
       <option name="presentableId" value="LOCAL‎00016" />
       <updated>1604991407586</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL‎00017" summary="adding README.md">
+      <created>1605771872194</created>
+      <option name="number" value="LOCAL‎00017" />
+      <option name="presentableId" value="LOCAL‎00017" />
+      <updated>1605771872194</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +343,8 @@
     <MESSAGE value="working on dynamic height of autocomplete" />
     <MESSAGE value="working on dynamic footer" />
     <MESSAGE value="cleaning" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning" />
+    <MESSAGE value="adding README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding README.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="417" key="#TSLint" timestamp="1598863725434">
@@ -376,11 +372,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1604991854956" />
-    <state x="569" y="81" key="CommitChangelistDialog2" timestamp="1604991404859">
+    <state x="569" y="81" key="CommitChangelistDialog2" timestamp="1605771869515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="379" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602580153342" />
-    <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604991404859" />
+    <state x="569" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1605771869515" />
     <state x="57" y="0" key="DiffContextDialog" timestamp="1605685578161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -424,16 +420,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1599375211755" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1605684168821">
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2" timestamp="1605771876860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="367" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602580158420" />
-    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605684168821" />
-    <state x="507" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601988590455">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605771876860" />
+    <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1605774733681">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="507" y="270" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.680@0.0.1280.680" timestamp="1601988590455" />
-    <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598800172781" />
+    <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605774733681" />
     <state x="854" y="436" width="348" height="298" key="org.angular.cli.generate" timestamp="1602676893752">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
