@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
